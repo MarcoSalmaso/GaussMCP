@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gauss-mcp"
+version = "0.1.0"
+description = "MCP server for statistical analysis — descriptive, inferential, time series, and Bayesian tools"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "scipy>=1.11.0",
+    "statsmodels>=0.14.0",
+    "openpyxl>=3.1.0",
+    "psycopg2-binary>=2.9.0",
+    "sqlalchemy>=2.0.0",
+]
+
+[project.optional-dependencies]
+bayesian = [
+    "pymc>=5.0.0",
+    "arviz>=0.17.0",
+]
+
+[project.scripts]
+gauss-mcp = "gauss_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gauss_mcp"]
