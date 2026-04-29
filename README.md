@@ -29,7 +29,7 @@
 ### Installazione base
 
 ```bash
-git clone https://github.com/tuousername/GaussMCP.git
+git clone https://github.com/MarcoSalmaso/GaussMCP.git
 cd GaussMCP
 pip install -e .
 ```
